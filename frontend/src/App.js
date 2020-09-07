@@ -26,19 +26,19 @@ function App() {
         </div>
         <div className="header-links">
           <a href="cart.html">Cart</a>
-          <a href="signin.html">Sign In</a>
+          <a href="signin.html">Entrar</a>
         </div>
       </header>
       <aside className="sidebar">
-        <h3>Shopping Categories</h3>
+        <h3>Shopping Categorias</h3>
         <button className="sidebar-close-button" onClick={closeMenu}>x</button>
         <ul>
           <li>
-            <a href="index.html">Pants</a>
+            <a href="index.html">Calças</a>
           </li>
 
           <li>
-            <a href="index.html">Shirts</a>
+            <a href="index.html">Camisas</a>
           </li>
 
         </ul>
@@ -52,7 +52,7 @@ function App() {
 
       </main>
       <footer className="footer">
-        All right reserved.
+        Todos os direitos reservados, 2020.
     </footer>
     </div>
   </BrowserRouter>
