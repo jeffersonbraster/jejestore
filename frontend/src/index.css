@@ -7,6 +7,9 @@ body {
  height: 100vh;
  margin: 0;
 }
+#root{
+  height: 100%;
+}
 .grid-container {
  display: grid;
  grid-template-areas: 
@@ -35,6 +38,7 @@ body {
 .header-links a{
  color: #ffffff;
  text-decoration: none;
+ padding: 1rem;
 }
 .header-links a:hover {
  color: #ff8000;
