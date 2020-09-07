@@ -8,7 +8,8 @@ export default {
         price: 100,
         brand: 'Nike',
         rating: 4.5,
-        numReviews: 10
+        numReviews: 10,
+        countInStock: 0
     },
     {
         _id: '2',
@@ -18,7 +19,8 @@ export default {
         price: 110,
         brand: 'Nike',
         rating: 4.5,
-        numReviews: 10
+        numReviews: 10,
+        countInStock: 7
     },
     {
         _id: '3',
@@ -28,7 +30,8 @@ export default {
         price: 120,
         brand: 'Iury marcas',
         rating: 4.5,
-        numReviews: 10
+        numReviews: 10,
+        countInStock: 8
     },
     {
         _id: '4',
@@ -38,62 +41,20 @@ export default {
         price: 130,
         brand: 'Molezinhas marcas',
         rating: 4.5,
-        numReviews: 10
+        numReviews: 10,
+        countInStock: 9
     },
     {
+        _id: '5',
         name: 'Pants Regatron',
         category: 'Pants',
         image: '/images/d1.jpg',
         price: 140,
         brand: 'jeje marcas',
         rating: 4.5,
-        numReviews: 10
+        numReviews: 10,
+        countInStock: 10
     },
-    
-    {
-        name: 'Pants Regatron',
-        category: 'Pants',
-        image: '/images/d1.jpg',
-        price: 140,
-        brand: 'jeje marcas',
-        rating: 4.5,
-        numReviews: 10
-    },
-    {
-        name: 'Pants Regatron',
-        category: 'Pants',
-        image: '/images/d1.jpg',
-        price: 140,
-        brand: 'jeje marcas',
-        rating: 4.5,
-        numReviews: 10
-    },
-    {
-        name: 'Pants Regatron',
-        category: 'Pants',
-        image: '/images/d1.jpg',
-        price: 140,
-        brand: 'jeje marcas',
-        rating: 4.5,
-        numReviews: 10
-    },
-    {
-        name: 'Pants Regatron',
-        category: 'Pants',
-        image: '/images/d1.jpg',
-        price: 140,
-        brand: 'jeje marcas',
-        rating: 4.5,
-        numReviews: 10
-    },
-    {
-        name: 'Pants Regatron',
-        category: 'Pants',
-        image: '/images/d1.jpg',
-        price: 140,
-        brand: 'jeje marcas',
-        rating: 4.5,
-        numReviews: 10
-    },
+   
 ]
 }
