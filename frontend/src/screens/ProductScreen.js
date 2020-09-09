@@ -22,12 +22,12 @@ function ProductScreen (props) {
     <div className="back-to-result">
       <Link to="/">Voltar</Link>
     </div>
-    {loading ? <div>Loading...</div> :
-      error ? <div>{error} </div> :
+    {loading ? <div>Carregando item...</div> :
+      error ? <div>{error}</div> :
         (
           <div className="details">
             <div className="details-image">
-              <img src={product.image} alt="product" ></img>
+              <img src={product.image} alt="product"></img>
             </div>
             <div className="details-info">
               <ul>
