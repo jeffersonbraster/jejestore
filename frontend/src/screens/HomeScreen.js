@@ -14,7 +14,7 @@ function HomeScreen (props) {
      
     }, [dispatch])
 
-    return loading ? <div>Loading...</div> :
+    return loading ? <div>Carregando loja...</div> :
     error ? <div>{error}</div> :
       <ul className="products">
         {

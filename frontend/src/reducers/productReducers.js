@@ -1,6 +1,7 @@
 
 import { PRODUCT_LIST_REQUEST, PRODUCT_LIST_SUCCESS, PRODUCT_LIST_FAILURE, PRODUCT_DETAILS_FAILURE, 
-    PRODUCT_DETAILS_REQUEST, PRODUCT_DETAILS_SUCCESS, PRODUCT_SAVE_FAILURE, PRODUCT_SAVE_SUCCESS, PRODUCT_SAVE_REQUEST } from '../constants/productContants';
+    PRODUCT_DETAILS_REQUEST, PRODUCT_DETAILS_SUCCESS, PRODUCT_SAVE_FAILURE, PRODUCT_SAVE_SUCCESS, PRODUCT_SAVE_REQUEST,
+PRODUCT_DELETE_SUCCESS, PRODUCT_DELETE_FAILURE, PRODUCT_DELETE_REQUEST } from '../constants/productContants';
 
 function productListReducer(state = {products:[]}, action) {
     switch (action.type) {
@@ -41,4 +42,17 @@ function productSaveReducer(state = {product: {} }, action) {
     }
 }
 
-export {productListReducer, productDetailsReducer, productSaveReducer}
+function productDeleteReducer(state = {product: {} }, action) {
+    switch (action.type) {
+        case PRODUCT_DELETE_REQUEST:
+            return {loading: true};
+        case PRODUCT_DELETE_SUCCESS:
+            return {loading: false, success: true, product: action.payload, success: true};
+        case PRODUCT_DELETE_FAILURE:
+            return{loading: false, error: action.payload};
+        default:
+            return state;
+    }
+}
+
+export {productListReducer, productDetailsReducer, productSaveReducer, productDeleteReducer}

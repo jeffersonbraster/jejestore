@@ -51,4 +51,14 @@ router.put('/:id', async(req, res) => {
     return res.status(500).send({error: 'Erro ao editar o produto, tente novamente mais tarde.'});
 });
 
+router.delete('/:id', async(req, res) => {
+    const deletedProduct = await Product.findById(req.params.id);
+    if(deletedProduct) {
+        await deletedProduct.remove();
+        res.send({message: "Produto deletado com sucesso."});
+    }else {
+    res.send({error: "Produto não deletado."});
+    }
+})
+
 export default router;

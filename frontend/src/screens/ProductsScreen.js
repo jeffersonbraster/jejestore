@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector} from 'react-redux';
-import { saveProduct, listProducts } from '../actions/productActions';
+import { saveProduct, listProducts, deleteProduct } from '../actions/productActions';
 
 
 function ProductsScreen (props) {
@@ -16,19 +16,25 @@ function ProductsScreen (props) {
     const [category, setCategory] = useState('');
     const [countInStock, setCountInStock] = useState('');
 
+
     const productList = useSelector(state => state.productList);
     const {loading, products, error} = productList;
 
     const productSave = useSelector(state => state.productSave);
     const {loading: loadingSave, success: successSave, error: errorSave} = productSave;
+    
+    const productDelete = useSelector(state => state.productDelete);
+    const {loading: loadingDelete, success: successDelete, error: errorDelete} = productDelete;
+
     const dispatch = useDispatch();
+
 
     useEffect(() => {
         if(successSave) {
             setModalVisible(false);
         }
         dispatch(listProducts());
-    }, [successSave])
+    }, [successSave, successDelete, dispatch])
     
     const openModal = (product) => {
         setModalVisible(true);
@@ -47,7 +53,11 @@ function ProductsScreen (props) {
         e.preventDefault();
         dispatch(saveProduct({_id: id, name, price, image, brand, category, countInStock, description}));
 
-    }  
+    }
+    
+    const deleteHandler = (product) => {
+        dispatch(deleteProduct(product._id));
+    }
 
     
     return <div className="content content-margined">
@@ -112,7 +122,7 @@ function ProductsScreen (props) {
 
 
         <div className="product-list">
-            <table>
+            <table className="table">
                 <thead>
                     <tr>
                         <th>Id</th>
@@ -132,9 +142,9 @@ function ProductsScreen (props) {
                      <td>{product.category}</td>
                      <td>{product.brand}</td>
                      <td>
-                         <button onClick={() => openModal(product)}>Edit</button>
+                         <button className="button" onClick={() => openModal(product)}>Edit</button>
                          {' '}
-                         <button>Delete</button>
+                         <button className="button" onClick={() => deleteHandler(product)}>Delete</button>
                      </td>
                      </tr>
                 )} 
