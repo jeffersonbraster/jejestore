@@ -15,9 +15,11 @@ function RegisterScreen (props) {
     const {loading, userInfo, error} = userRegister;
     const dispatch = useDispatch();
 
+    const redirect = props.location.search?props.location.search.split('=')[1] : '/';
+
     useEffect(() => {
        if(userInfo) {
-           props.history.push('/');
+           props.history.push(redirect);
        }
         
       }, [userInfo, props.history]);
@@ -61,7 +63,8 @@ function RegisterScreen (props) {
                     <button type="submit" className="button primary">Registrar</button>
                 </li>
                 <li>
-                    Já possui uma conta?<Link to="/signin">Faça o login</Link>
+                    Já possui uma conta?
+                    <Link to={redirect === '/' ? 'signin' : 'signin?redirect=' + redirect} className="button secondary text-center">Criar sua conta na JejeStore</Link>
                 </li>                                
             </ul>
         </form>
