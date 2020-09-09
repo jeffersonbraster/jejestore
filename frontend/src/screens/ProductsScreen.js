@@ -24,8 +24,11 @@ function ProductsScreen (props) {
     const dispatch = useDispatch();
 
     useEffect(() => {
+        if(successSave) {
+            setModalVisible(false);
+        }
         dispatch(listProducts());
-    }, [])
+    }, [successSave])
     
     const openModal = (product) => {
         setModalVisible(true);
@@ -94,7 +97,7 @@ function ProductsScreen (props) {
                      <input type="text" id="image" name="image" value={image} onChange={(e) => setImage(e.target.value)} />
                  </li>
                  <li>
-                     <button type="submit" className="button primary">Criar</button>
+                     <button type="submit" className="button primary">{id ? "Editar" : "Criar"}</button>
                  </li>
                  <li>
                      <button type="submit" onClick={() =>{setModalVisible(false)}} className="button secondary">Fechar</button>
